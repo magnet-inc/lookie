@@ -71,13 +71,15 @@ localStorage.prototype.get = function(key) {
 };
 
 localStorage.prototype.del = function() {
-  var keys = arguments, len = keys.length, i = 0, key, keyPath;
+  var keys = arguments, len = keys.length, i = 0, key, keyPath, val;
   while(i < len) {
     key = keys[i];
 
+    val = this.get(key);
     keyPath = this.getKeyPathByKey(key);
     localStorage.storage.removeItem(keyPath);
     this.emit('del', key);
+    this.emit('change', key, null, val);
 
     i++;
   };
@@ -108,7 +110,7 @@ localStorage.prototype.clear = function() {
 var storageEventCallback = function(event) {
   var keyPath = event.key;
   var eventType = 'change';
-  var oldVal, newVal;
+  var oldVal = null, newVal = null;
 
   if(!event.newValue) {
     eventType = 'del';
@@ -129,8 +131,10 @@ var storageEventCallback = function(event) {
     key = instance.getKeyByKeyPath(keyPath);
 
     if(key) {
-      instance.emit(eventType, key, newVal, oldVal);
-      if(eventType === 'add') { this.emit('change', key, newVal, oldVal); };
+      if(eventType !== 'change') {
+        instance.emit(eventType, key, newVal, oldVal);
+      };
+      instance.emit('change', key, newVal, oldVal);
     };
 
     i++;
