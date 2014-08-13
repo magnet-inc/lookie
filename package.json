@@ -1,0 +1,19 @@
+{
+  "name": "lookie",
+  "version": "0.0.0",
+  "description": "",
+  "main": "dist/lookie.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sho Kusano",
+  "license": "MIT",
+  "devDependencies": {
+    "browserify": "^5.9.3",
+    "del": "^0.1.1",
+    "event-emitter": "^0.3.1",
+    "gulp": "^3.8.7",
+    "gulp-uglify": "^0.3.1",
+    "vinyl-source-stream": "^0.1.1"
+  }
+}
