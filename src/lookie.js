@@ -5,11 +5,15 @@ var Lookie = function(namespace) {
 
   if(Lookie.LocalStorage.enabled) {
     this.storage = new Lookie.LocalStorage(this.namespace);
-    require('event-emitter/pipe')(this.storage, this);
-  }
+  } else if(Lookie.Cookie.enabled) {
+    this.storage = new Lookie.Cookie(this.namespace);
+  };
+
+  require('event-emitter/pipe')(this.storage, this);
 };
 
 Lookie.LocalStorage = require('./localStorage');
+Lookie.Cookie = require('./cookie');
 
 // Get the value of a key
 Lookie.prototype.get = function(key) {
