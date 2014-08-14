@@ -4,6 +4,7 @@ var uglify = require('gulp-uglify');
 var source = require('vinyl-source-stream');
 var del = require('del');
 var karma = require('gulp-karma');
+var serve = require('gulp-serve');
 
 gulp.task('clean', function(cb) {
   del(['build', 'dist'], cb);
@@ -31,6 +32,8 @@ gulp.task('test', function() {
       throw err;
     });
 });
+
+gulp.task('serve', serve(__dirname));
 
 gulp.task('watch', ['build'], function() {
   gulp.watch('src/*.js', ['build']);
