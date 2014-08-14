@@ -1,3 +1,18 @@
 # Lookie
 
 localStorage <-> Cookie
+
+# Build
+
+```shell
+$ npm install -g gulp karma karma-cli
+$ npm install
+$ gulp [watch|build|compile]
+```
+
+Run example file
+
+```shell
+$ python -mSimpleHTTPServer 8080
+$ open "http://localhost:8080/example/index.html
+```
