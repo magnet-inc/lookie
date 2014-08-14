@@ -1,3 +1,17 @@
 # Lookie
 
 localStorage <-> Cookie
+
+# Build
+
+```shell
+$ npm install -g gulp karma karma-cli
+$ npm install
+$ gulp [watch|build|compile]
+```
+
+Run example file
+
+```shell
+$ gulp example
+```
