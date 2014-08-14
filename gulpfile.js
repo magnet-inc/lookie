@@ -5,6 +5,7 @@ var source = require('vinyl-source-stream');
 var del = require('del');
 var karma = require('gulp-karma');
 var serve = require('gulp-serve');
+var shell = require('gulp-shell');
 
 gulp.task('clean', function(cb) {
   del(['build', 'dist'], cb);
@@ -33,7 +34,14 @@ gulp.task('test', function() {
     });
 });
 
-gulp.task('serve', serve(__dirname));
+gulp.task('serve', serve({
+  root: __dirname,
+  port: 8080
+}));
+
+gulp.task('open', shell.task([
+  'open "http://localhost:8080/example/index.html"'
+]));
 
 gulp.task('watch', ['build'], function() {
   gulp.watch('src/*.js', ['build']);
@@ -44,4 +52,5 @@ gulp.task('watch', ['build'], function() {
     }));
 });
 
+gulp.task('example', ['serve', 'open']);
 gulp.task('default', ['watch']);
