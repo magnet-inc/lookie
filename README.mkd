@@ -1,17 +1,9 @@
 # Lookie
 
-localStorage <-> Cookie
+Local storage in anywhere.
 
-# Build
+## Installation
 
-```shell
-$ npm install -g gulp karma karma-cli
-$ npm install
-$ gulp [watch|build|compile]
-```
-
-Run example file
-
-```shell
-$ gulp example
+```html
+<script type="text/javascript" src="/path/to/lookie.js"></script>
 ```

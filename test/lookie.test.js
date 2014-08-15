@@ -2,6 +2,7 @@ var Lookie = require('../src/lookie');
 var cookies = require('cookies-js');
 var instance = null;
 var ns = 'namespace';
+var expect = require('chai').expect;
 
 describe('Lookie', function() {
   beforeEach(function() {

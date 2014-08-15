@@ -4,7 +4,7 @@
   "description": "",
   "main": "lookie.js",
   "scripts": {
-    "test": "./node_modules/karma/bin/karma start karma.conf-ci.js"
+    "test": "./node_modules/karma/bin/karma start karma.conf.js --single-run --browsers PhantomJS,Firefox"
   },
   "author": "Sho Kusano",
   "license": "MIT",
@@ -28,5 +28,14 @@
     "karma-sauce-launcher": "^0.2.10",
     "mocha": "^1.21.4",
     "vinyl-source-stream": "^0.1.1"
+  },
+  "testling": {
+    "harness": "mocha-bdd",
+    "files": "test/*.js",
+    "browsers": [
+      "ie/8..latest",
+      "chrome/latest",
+      "firefox/latest"
+    ]
   }
 }
