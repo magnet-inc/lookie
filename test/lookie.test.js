@@ -5,7 +5,7 @@ var expect = require('expect.js');
 
 describe('Lookie', function() {
   beforeEach(function() {
-    if(!!localStorage) { localStorage.clear(); }
+    if(!!window['localStorage']) { localStorage.clear(); }
     cookies.expire('namespace.lookie', { path: '/' });
     cookies.expire('namespace.another.lookie', { path: '/' });
   });
@@ -36,7 +36,7 @@ describe('Lookie', function() {
     it('should fire the add event', function(done) {
       var instance = new Lookie(ns);
 
-      instance.on('add', function(key, val) {
+      instance.once('add', function(key, val) {
         expect(key).to.equal('foo');
         expect(val).to.equal(1);
         done();
@@ -48,7 +48,7 @@ describe('Lookie', function() {
       var instance = new Lookie(ns);
 
       instance.set('foo', 1);
-      instance.on('change', function(key, val, old) {
+      instance.once('change', function(key, val, old) {
         expect(key).to.equal('foo');
         expect(val).to.equal(2);
         expect(old).to.equal(1);
@@ -73,7 +73,7 @@ describe('Lookie', function() {
       var instance = new Lookie(ns);
 
       instance.set('foo', 1);
-      instance.on('del', function(key) {
+      instance.once('del', function(key) {
         expect(key).to.equal('foo');
         done();
       });
