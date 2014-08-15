@@ -1,6 +1,6 @@
-var Lookie = function(namespace) {
-  require('event-emitter')(this);
+var EventEmitter = require('wolfy87-eventemitter');
 
+var Lookie = function(namespace) {
   this.namespace = namespace;
 
   if(Lookie.LocalStorage.enabled) {
@@ -9,11 +9,22 @@ var Lookie = function(namespace) {
     this.storage = new Lookie.Cookie(this.namespace);
   };
 
-  require('event-emitter/pipe')(this.storage, this);
+  var self = this;
+  var pipeEvents = ['add', 'del', 'change'];
+
+  for(event in pipeEvents) {
+    (function(ev) {
+      self.storage.on(ev, function(key, nv, ov) {
+        self.emit(ev, key, nv, ov);
+      });
+    })(pipeEvents[event]);
+  };
 };
 
 Lookie.LocalStorage = require('./localStorage');
 Lookie.Cookie = require('./cookie');
+
+Lookie.prototype = new EventEmitter();
 
 // Get the value of a key
 Lookie.prototype.get = function(key) {

@@ -1,3 +1,5 @@
+var EventEmitter = require('wolfy87-eventemitter');
+
 var Cookie = require('cookies-js');
 var expires = 10 * 365 * 24 * 60 * 60;
 
@@ -33,8 +35,6 @@ var diffObject = function(lhs, rhs) {
 };
 
 var cookie = function(namespace) {
-  require('event-emitter')(this);
-
   this.namespace = namespace;
   this.cookieName = this.namespace + '.lookie';
 
@@ -66,6 +66,8 @@ cookie.enabled = Cookie.enabled;
 module.exports = cookie;
 
 if(!cookie.enabled) { return; };
+
+cookie.prototype = new EventEmitter();
 
 cookie.prototype.getStorage = function() {
   var storage = Cookie.get(this.cookieName);
