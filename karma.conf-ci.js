@@ -1,5 +1,6 @@
 // Karma configuration
 // Generated on Thu Aug 14 2014 04:56:24 GMT+0900 (JST)
+var fs = require('fs');
 
 module.exports = function(config) {
   // Use ENV vars on Travis and sauce.json locally to get credentials
