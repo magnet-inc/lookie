@@ -43,22 +43,22 @@ var cookie = function(namespace) {
     var diffs = diffObject(oldStorage, me.getStorage());
 
     if(diffs.length > 0) {
-      var i = 0, l = diffs.length, diff;
+      var i = 0, l = diffs.length;
 
       while(i < l) {
-        diff = diffs[i];
-
-        me.emit(diff.type, diff.key, diff.newValue, diff.oldValue);
-        if(diff.type !== 'change') {
-          me.emit('change', diff.key, diff.newValue, diff.oldValue);
-        };
+        (function(diff){
+          me.emit(diff.type, diff.key, diff.newValue, diff.oldValue);
+          if(diff.type !== 'change') {
+            me.emit('change', diff.key, diff.newValue, diff.oldValue);
+          };
+        })(diffs[i]);
 
         i++;
       };
 
       oldStorage = me.getStorage();
     };
-  }, 1000 / 30);
+  }, 33);
 };
 
 cookie.enabled = Cookie.enabled;
@@ -84,7 +84,6 @@ cookie.prototype.saveStorage = function(storage) {
 
 cookie.prototype.set = function(key, val) {
   var storage = this.getStorage();
-  var old = storage[key];
   storage[key] = val;
   this.saveStorage(storage);
 };
@@ -93,9 +92,7 @@ cookie.prototype.get = function(key) {
   var storage = this.getStorage();
   var val = storage[key];
 
-  if(typeof val !== 'string') { return val };
-
-  return JSON.parse(val);
+  return val;
 };
 
 cookie.prototype.del = function() {
