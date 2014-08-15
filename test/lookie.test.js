@@ -2,7 +2,7 @@ var Lookie = require('../src/lookie');
 var cookies = require('cookies-js');
 var instance = null;
 var ns = 'namespace';
-var expect = require('chai').expect;
+var expect = require('expect.js');
 
 describe('Lookie', function() {
   beforeEach(function() {
@@ -26,11 +26,11 @@ describe('Lookie', function() {
       expect(instance.get('array')).to.have.length(3);
       // object
       instance.set('object', {foo: 1, bar: 2});
-      expect(instance.get('object')).to.be.have.property('foo');
-      expect(instance.get('object')).to.be.have.property('bar');
+      expect(instance.get('object')).to.have.property('foo');
+      expect(instance.get('object')).to.have.property('bar');
       expect(instance.get('object').foo).to.equal(1);
       // undefined
-      expect(instance.get('null')).to.be.a('null');
+      expect(instance.get('null')).to.eql(null);
     });
 
     it('should fire the add event', function(done) {
