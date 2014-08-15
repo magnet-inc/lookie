@@ -11,13 +11,15 @@ var Lookie = function(namespace) {
 
   var self = this;
   var pipeEvents = ['add', 'del', 'change'];
+  var i = 0; l = pipeEvents.length;
 
-  for(event in pipeEvents) {
+  while(i < l) {
     (function(ev) {
       self.storage.on(ev, function(key, nv, ov) {
         self.emit(ev, key, nv, ov);
       });
-    })(pipeEvents[event]);
+    })(pipeEvents[i]);
+    i++;
   };
 };
 
