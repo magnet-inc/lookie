@@ -1,5 +1,7 @@
 # Lookie
 
+[![Build Status](https://travis-ci.org/magnet-inc/lookie.svg?branch=master)](https://travis-ci.org/magnet-inc/lookie)
+
 Local storage in anywhere.
 
 ## Installation
