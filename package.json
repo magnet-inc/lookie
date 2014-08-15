@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/lookie.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/karma/bin/karma start --single-run --browsers PhantomJS,Firefox"
   },
   "author": "Sho Kusano",
   "license": "MIT",
@@ -22,6 +22,7 @@
     "karma": "^0.12.21",
     "karma-browserifast": "^0.7.0",
     "karma-chai": "^0.1.0",
+    "karma-firefox-launcher": "^0.1.3",
     "karma-mocha": "^0.1.7",
     "karma-phantomjs-launcher": "^0.1.4",
     "mocha": "^1.21.4",
