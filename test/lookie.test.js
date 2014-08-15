@@ -1,6 +1,5 @@
 var Lookie = require('../src/lookie');
 var cookies = require('cookies-js');
-var instance = null;
 var ns = 'namespace';
 var expect = require('expect.js');
 
@@ -9,11 +8,12 @@ describe('Lookie', function() {
     if(!!localStorage) { localStorage.clear(); }
     cookies.expire('namespace.lookie', { path: '/' });
     cookies.expire('namespace.another.lookie', { path: '/' });
-    instance = new Lookie(ns);
   });
 
   describe('#set and #get', function() {
     it('should be set value', function() {
+      var instance = new Lookie(ns);
+
       // string
       instance.set('string', 'string');
       expect(instance.get('string')).to.equal('string');
@@ -34,6 +34,8 @@ describe('Lookie', function() {
     });
 
     it('should fire the add event', function(done) {
+      var instance = new Lookie(ns);
+
       instance.on('add', function(key, val) {
         expect(key).to.equal('foo');
         expect(val).to.equal(1);
@@ -43,6 +45,8 @@ describe('Lookie', function() {
     });
 
     it('should fire the change event', function(done) {
+      var instance = new Lookie(ns);
+
       instance.set('foo', 1);
       instance.on('change', function(key, val, old) {
         expect(key).to.equal('foo');
@@ -56,6 +60,8 @@ describe('Lookie', function() {
 
   describe('#del', function() {
     it('should delete keys', function() {
+      var instance = new Lookie(ns);
+
       instance.set('foo', 1);
       instance.set('bar', 1);
       instance.del('foo', 'bar');
@@ -64,6 +70,8 @@ describe('Lookie', function() {
     });
 
     it('should fire the del event', function(done) {
+      var instance = new Lookie(ns);
+
       instance.set('foo', 1);
       instance.on('del', function(key) {
         expect(key).to.equal('foo');
@@ -75,6 +83,8 @@ describe('Lookie', function() {
 
   describe('#keys', function() {
     it('should return all keys', function() {
+      var instance = new Lookie(ns);
+
       var anotherNS = new Lookie(ns + '.another');
       anotherNS.set('foo', 1);
       instance.set('bar', 2);
@@ -86,6 +96,8 @@ describe('Lookie', function() {
 
   describe('#clear', function() {
     it('should clear storage', function() {
+      var instance = new Lookie(ns);
+
       var anotherNS = new Lookie(ns + '.another');
       anotherNS.set('foo', 1);
       instance.set('bar', 2);
