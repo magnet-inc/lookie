@@ -11,6 +11,14 @@
     log.innerText += "Change: " + key + ": " + oldVal + " -> " + newVal + "\n";
   });
 
+  lookie.on('add', function(key, newVal) {
+    log.innerText += "Add: " + key + ": " + newVal + "\n";
+  });
+
+  lookie.on('del', function(key) {
+    log.innerText += "Del: " + key + "\n";
+  });
+
   var input = document.getElementById('text');
   document.getElementById('submit').addEventListener('click', function(e) {
     e.preventDefault();
