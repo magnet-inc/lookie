@@ -4,7 +4,7 @@
   "description": "",
   "main": "lookie.js",
   "scripts": {
-    "test": "./node_modules/karma/bin/karma start karma.conf-ci.js --single-run --browsers PhantomJS,Firefox"
+    "test": "./node_modules/karma/bin/karma start karma.conf-ci.js"
   },
   "author": "Sho Kusano",
   "license": "MIT",
