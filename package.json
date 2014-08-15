@@ -13,7 +13,6 @@
     "chai": "^1.9.1",
     "cookies-js": "^0.4.0",
     "del": "^0.1.1",
-    "expect.js": "^0.3.1",
     "gulp": "^3.8.7",
     "gulp-karma": "^0.0.4",
     "gulp-serve": "^0.2.0",
