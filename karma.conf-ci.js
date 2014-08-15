@@ -111,6 +111,7 @@ module.exports = function(config) {
     captureTimeout: 120000,
     customLaunchers: customLaunchers,
 
+    autoWatch: false,
     browsers: Object.keys(customLaunchers),
     singleRun: true
   });
