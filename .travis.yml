@@ -1,6 +1,10 @@
 language: node_js
 node_js:
-  - 0.10
+  - '0.10'
 before_script:
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+env:
+  global:
+  - secure: QyTx2t0uOKcAhPjtbp0i5QAOk+uLDAP6K9AdDyVp6B8g9J0/vNm325ihAA2gH0mtJ2Qft8boPg/grr7MI9h5nNbrqu+la0oAzTAxSSlKGtHG6IAxXcKwyW6RHXDwaeCSjvODDmYc0GXAWMMIi+EQrNsmJjJ3LkxCQ3mRv48oWcg=
+  - secure: AfwaTYGUsNLv+xvmggCyrqHL7jm6Q3ZAKaKIYuofcgLfLiWNayP9I3UlWmp3ozAqhUHDj5QB9rU/flsCpWp9jAJaj+deJOouZ1Qb2+NdBy0OlbecOx8rQJWqOQgUkivfn5W1YeUDB8JyElT1YVQuFQD9ZZy/3RbR1SiVuFqXypk=
