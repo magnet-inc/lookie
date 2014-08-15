@@ -34,7 +34,7 @@ gulp.task('test', function() {
     });
 });
 
-gulp.task('serve', serve({
+gulp.task('serve', ['compile'], serve({
   root: __dirname,
   port: 8080
 }));
@@ -43,8 +43,8 @@ gulp.task('open', shell.task([
   'open "http://localhost:8080/example/index.html"'
 ]));
 
-gulp.task('watch', ['build'], function() {
-  gulp.watch('src/*.js', ['build']);
+gulp.task('watch', ['compile'], function() {
+  gulp.watch('src/*.js', ['compile']);
   gulp.src('test/*.js').
     pipe(karma({
       configFile: 'karma.conf.js',
