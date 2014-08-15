@@ -8,7 +8,7 @@ var serve = require('gulp-serve');
 var shell = require('gulp-shell');
 
 gulp.task('clean', function(cb) {
-  del(['build', 'dist'], cb);
+  del(['build'], cb);
 });
 
 gulp.task('build', ['clean'], function() {
@@ -20,7 +20,7 @@ gulp.task('build', ['clean'], function() {
 gulp.task('compile', ['build'], function() {
   return gulp.src('build/*.js').
     pipe(uglify()).
-    pipe(gulp.dest('./dist/'));
+    pipe(gulp.dest('.'));
 });
 
 gulp.task('test', function() {

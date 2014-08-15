@@ -1,8 +1,8 @@
 {
   "name": "lookie",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "",
-  "main": "dist/lookie.js",
+  "main": "lookie.js",
   "scripts": {
     "test": "./node_modules/karma/bin/karma start karma.conf.js --single-run --browsers PhantomJS,Firefox"
   },

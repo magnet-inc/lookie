@@ -1,11 +1,14 @@
-var LocalStorage = require('../src/localStorage');
+var Lookie = require('../src/lookie');
+var cookies = require('cookies-js');
 var instance = null;
 var ns = 'namespace';
 
-describe('localStorage', function() {
+describe('Lookie', function() {
   beforeEach(function() {
-    localStorage.clear();
-    instance = new LocalStorage(ns);
+    if(!!localStorage) { localStorage.clear(); }
+    cookies.expire('namespace.lookie', { path: '/' });
+    cookies.expire('namespace.another.lookie', { path: '/' });
+    instance = new Lookie(ns);
   });
 
   describe('#set and #get', function() {
@@ -71,7 +74,7 @@ describe('localStorage', function() {
 
   describe('#keys', function() {
     it('should return all keys', function() {
-      var anotherNS = new LocalStorage(ns + '.another');
+      var anotherNS = new Lookie(ns + '.another');
       anotherNS.set('foo', 1);
       instance.set('bar', 2);
       instance.set('baz', 3);
@@ -82,7 +85,7 @@ describe('localStorage', function() {
 
   describe('#clear', function() {
     it('should clear storage', function() {
-      var anotherNS = new LocalStorage(ns + '.another');
+      var anotherNS = new Lookie(ns + '.another');
       anotherNS.set('foo', 1);
       instance.set('bar', 2);
       instance.clear();
@@ -92,3 +95,4 @@ describe('localStorage', function() {
     });
   });
 });
+
