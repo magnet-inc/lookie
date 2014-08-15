@@ -138,11 +138,12 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['mocha', 'expect', 'browserify'],
+    frameworks: ['jasmine', 'browserify'],
 
 
     // list of files / patterns to load in the browser
     files: [
+      "test/json.js",
       "test/**/*.js"
     ],
 
@@ -186,8 +187,13 @@ module.exports = function(config) {
 
     browserStack: {
       project: 'magnet-inc/lookie',
-      build: process.env.TRAVIS_BUILD_NUMBER || +(new Date)
+      build: process.env.TRAVIS_BUILD_NUMBER || +(new Date),
     },
+
+    browserDisconnectTimeout : 10000,
+    browserDisconnectTolerance : 1,
+    browserNoActivityTimeout : 4*60*1000,
+    captureTimeout : 4*60*1000,
 
     customLaunchers: customLaunchers,
     browsers: Object.keys(customLaunchers),

@@ -1,6 +1,6 @@
-var localStorage = function(namespace){
-  require('event-emitter')(this);
+var EventEmitter = require('wolfy87-eventemitter');
 
+var localStorage = function(namespace){
   this.namespace = namespace;
   localStorage.instances.push(this);
 };
@@ -28,6 +28,8 @@ if(localStorage.enabled) {
 };
 
 if(!localStorage.enabled) { return; };
+
+localStorage.prototype = new EventEmitter();
 
 localStorage.prototype.getKeyPathByKey = function(key) {
   return this.namespace + "/" + key;
