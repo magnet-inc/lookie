@@ -186,8 +186,13 @@ module.exports = function(config) {
 
     browserStack: {
       project: 'magnet-inc/lookie',
-      build: process.env.TRAVIS_BUILD_NUMBER || +(new Date)
+      build: process.env.TRAVIS_BUILD_NUMBER || +(new Date),
     },
+
+    browserDisconnectTimeout : 10000,
+    browserDisconnectTolerance : 1,
+    browserNoActivityTimeout : 4*60*1000,
+    captureTimeout : 4*60*1000,
 
     customLaunchers: customLaunchers,
     browsers: Object.keys(customLaunchers),
