@@ -3,7 +3,7 @@ node_js:
   - '0.10'
 env:
   global:
-  - secure: c0xZjkGNCI7GcqfNXplXR5S3O0y4T1XiOHcw3bA1ohFcp2+DRf+QexgIb19IaXLI/JY7dH776MEIcaozclf98ecnL49mO9d2tLrTAFQcrSwCmgpKHSRnrmF+tgEhh0FWLx24/jIFcJKOpl3igzdL+qAS+EEfbM24CahLyxyr0Qk=
-  - secure: WJRFrfbu56qjdinSHu7ev+FJeJ9wxqQGng+CUoiHuSElRsm6LO4Ag31++L1A1WUKzPz/EN+r8cR1F5LxdOindT8r2yKaovzlg4WBs9bp4yUR4ER0r/ZtoJuJn19MBLfalyGGqPjhsHnOm+k9CkXb28zMU86ThszH+lobXQSnXM8=
+  - secure: BBjPnhHTvOzkstt63xTVNvGxcCKkMUWhHs23Be5M9ZUr+nydWPGONzjH67x9QRskAkL6EJDzR5EiqRWuUeYWv9K1lDL7lrCbZIenwnE/Pij9Jc+p7gytk8wZRhpT7tEL+ZsfiWTzNQcqMkU83WS0VUJOLG7O03L/o1jNmMj+rm4=
+  - secure: dyO6/4bz3VQWz3T2gFxOhxL0pRFvylEtUBIMoj5MQwnBRaR+OWFa/+KylwfSz8CJED6XFausNMjUmIF5jLJos+JBDk+lepNXfRIodPHrj0MnNQV/hVWmSIz1S7+aAEQuDxuvaTiA3qaq6RTCvlafIS3/aYWf5kYr6Ik1vLeAJ7w=
 addons:
   sauce_connect: true
