@@ -19,11 +19,13 @@ module.exports = function(config) {
     'SL_Chrome': {
       base: 'SauceLabs',
       browserName: 'chrome',
+      platform: 'OS X 10.9',
       version: '35'
     },
     'SL_Firefox': {
       base: 'SauceLabs',
       browserName: 'firefox',
+      platform: 'OS X 10.9',
       version: '30'
     },
     'SL_Safari': {
