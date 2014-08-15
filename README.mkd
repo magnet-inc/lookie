@@ -13,6 +13,5 @@ $ gulp [watch|build|compile]
 Run example file
 
 ```shell
-$ python -mSimpleHTTPServer 8080
-$ open "http://localhost:8080/example/index.html
+$ gulp example
 ```
