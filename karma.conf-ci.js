@@ -151,6 +151,7 @@ module.exports = function(config) {
       startConnect: false,
       tunnelIdentifier: process.env.TRAVIS_JOB_NUMBER,
     },
+    browserNoActivityTimeout: 100000,
     captureTimeout: 120000,
 
     customLaunchers: customLaunchers,
