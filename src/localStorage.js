@@ -110,6 +110,7 @@ localStorage.prototype.clear = function() {
 };
 
 var storageEventCallback = function(event) {
+  console.log(event.key);
   var keyPath = event.key;
   var eventType = 'change';
   var oldVal = null, newVal = null;
@@ -143,8 +144,8 @@ var storageEventCallback = function(event) {
   };
 };
 
-if(typeof window.attachEvent === 'function') {
-  window.attachEvent('onstorage', storageEventCallback);
-} else {
+if(window['addEventListener']) {
   window.addEventListener('storage', storageEventCallback, false);
+} else {
+  document.body.attachEvent('onstorage', storageEventCallback);
 };
