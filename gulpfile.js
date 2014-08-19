@@ -34,6 +34,68 @@ gulp.task('test', function() {
     });
 });
 
+gulp.task('ci-modern', function() {
+  return gulp.src('test/*.js').
+    pipe(karma({
+      configFile: 'karma.conf-ci.js',
+      browsers: ['SL_Chrome_Mac', 'SL_Firefox_Mac', 'SL_Safari_7'],
+      action: 'run'
+    })).
+    on('error', function(err) {
+      throw err;
+    });
+});
+
+gulp.task('ci-ie-modern', function() {
+  return gulp.src('test/*.js').
+    pipe(karma({
+      configFile: 'karma.conf-ci.js',
+      browsers: ['SL_IE_9', 'SL_IE_10', 'SL_IE_11'],
+      action: 'run'
+    })).
+    on('error', function(err) {
+      throw err;
+    });
+});
+
+gulp.task('ci-ie-legacy', function() {
+  return gulp.src('test/*.js').
+    pipe(karma({
+      configFile: 'karma.conf-ci.js',
+      browsers: ['SL_IE_6', 'SL_IE_7', 'SL_IE_8'],
+      action: 'run'
+    })).
+    on('error', function(err) {
+      throw err;
+    });
+});
+
+gulp.task('ci-mobile', function() {
+  return gulp.src('test/*.js').
+    pipe(karma({
+      configFile: 'karma.conf-ci.js',
+      browsers: ['SL_iOS_7', 'SL_Android_4_4'],
+      action: 'run'
+    })).
+    on('error', function(err) {
+      throw err;
+    });
+});
+
+gulp.task('ci-opera', function() {
+  return gulp.src('test/*.js').
+    pipe(karma({
+      configFile: 'karma.conf-ci.js',
+      browsers: ['SL_Opera'],
+      action: 'run'
+    })).
+    on('error', function(err) {
+      throw err;
+    });
+});
+
+gulp.task('ci', ['ci-modern', 'ci-ie-modern', 'ci-ie-legacy', 'ci-mobile', 'ci-opera'])
+
 gulp.task('serve', ['compile'], serve({
   root: __dirname,
   port: 8080

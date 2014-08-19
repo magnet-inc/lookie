@@ -153,12 +153,14 @@ module.exports = function(config) {
     sauceLabs: {
       testName: 'magnet-inc/lookie',
       tag: process.env.TRAVIS_TAG || '',
-      build: process.env.TRAVIS_BUILD_NUMBER || +(new Date())
+      build: process.env.TRAVIS_BUILD_NUMBER || +(new Date()),
+      startConnect: false,
+      tunnelIdentifier: process.env.TRAVIS_JOB_NUMBER,
     },
     captureTimeout: 120000,
 
     customLaunchers: customLaunchers,
-    browsers: Object.keys(customLaunchers),
+    browsers: [],
 
     autoWatch: false,
     singleRun: true
