@@ -6,9 +6,66 @@
 
 Local storage in anywhere.
 
-
 ## Installation
 
 ```html
 <script type="text/javascript" src="/path/to/lookie.js"></script>
+```
+
+## Usage
+
+First, setup your lookie storage.
+
+```javascript
+var lookie = new Lookie('namespace');
+```
+
+### Get and Set keys and values.
+
+```javascript
+lookie.set('foo', anyObject);
+lookie.get('foo'); // => anyObject
+lookie.del('foo');
+lookie.get('foo'); // => null or undefined
+```
+
+### Check exists the key.
+
+```javascript
+lookie.exists('foo'); // => false
+lookie.set('foo', 1);
+lookie.exists('foo'); // => true
+```
+
+### Get the keys in the namespace.
+
+```javascript
+lookie.keys(); // => []
+lookie.set('foo', 1);
+lookie.keys(); // => ['foo']
+```
+
+### Clear all keys and values in the namespace.
+
+```javascript
+lookie.set('foo', 1);
+lookie.keys(); // => ['foo']
+looke.clear();
+lookie.keys(); // => []
+```
+
+### Event handling.
+
+```javascript
+lookie.on('add', function(key, newValue) {
+  console.log(key);
+});
+
+lookie.on('change', function(key, newValue, oldValue) {
+  console.log(key);
+});
+
+lookie.on('del', function(key) {
+  console.log(key);
+});
 ```
