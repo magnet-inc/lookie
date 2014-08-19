@@ -110,7 +110,6 @@ localStorage.prototype.clear = function() {
 };
 
 var storageEventCallback = function(event) {
-  console.log(event.key);
   var keyPath = event.key;
   var eventType = 'change';
   var oldVal = null, newVal = null;
