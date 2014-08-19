@@ -28,19 +28,5 @@
     "mocha": "^1.21.4",
     "vinyl-source-stream": "^0.1.1",
     "wolfy87-eventemitter": "^4.2.6"
-  },
-  "testling": {
-    "harness": "mocha-bdd",
-    "files": "test/*.js",
-    "browsers": [
-      "ie/6..latest",
-      "chrome/latest",
-      "firefox/latest",
-      "opera/11..latest",
-      "safari/4..latest",
-      "iphone/6..latest",
-      "ipad/6..latest",
-      "android-browser/4..latest"
-    ]
   }
 }
