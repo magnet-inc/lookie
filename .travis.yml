@@ -6,3 +6,6 @@ addons:
 env:
   global:
     secure: bZ/8Q722q+Uwc+fhdbH2x6xGY1enRtPKi3SF2KASdnKfg3CET3jze9gGhwccF0ZjTz9OAIx6Guy6adnV4buiWxwqKu8DpGrPpNldfoROpP/pkDlOfiSTljSAlPlm+DlHNML8gfqet99RXK9FQsy9J3MCaGpFh5g2PgrYcJbzCBg=
+branches:
+  only:
+    - master
