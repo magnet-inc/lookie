@@ -34,7 +34,7 @@ gulp.task('test', function() {
     });
 });
 
-gulp.task('ci-modern', function() {
+gulp.task('ci-modern', ['test'], function() {
   return gulp.src('test/*.js').
     pipe(karma({
       configFile: 'karma.conf-ci.js',
@@ -46,7 +46,7 @@ gulp.task('ci-modern', function() {
     });
 });
 
-gulp.task('ci-ie-modern', function() {
+gulp.task('ci-ie-modern', ['ci-modern'], function() {
   return gulp.src('test/*.js').
     pipe(karma({
       configFile: 'karma.conf-ci.js',
@@ -58,7 +58,7 @@ gulp.task('ci-ie-modern', function() {
     });
 });
 
-gulp.task('ci-ie-legacy', function() {
+gulp.task('ci-ie-legacy', ['ci-ie-modern'], function() {
   return gulp.src('test/*.js').
     pipe(karma({
       configFile: 'karma.conf-ci.js',
@@ -70,7 +70,7 @@ gulp.task('ci-ie-legacy', function() {
     });
 });
 
-gulp.task('ci-mobile', function() {
+gulp.task('ci-mobile', ['ci-ie-legacy'], function() {
   return gulp.src('test/*.js').
     pipe(karma({
       configFile: 'karma.conf-ci.js',
@@ -82,7 +82,7 @@ gulp.task('ci-mobile', function() {
     });
 });
 
-gulp.task('ci-opera', function() {
+gulp.task('ci-opera', ['ci-mobile'], function() {
   return gulp.src('test/*.js').
     pipe(karma({
       configFile: 'karma.conf-ci.js',
@@ -94,7 +94,7 @@ gulp.task('ci-opera', function() {
     });
 });
 
-gulp.task('ci', ['ci-modern', 'ci-ie-modern', 'ci-ie-legacy', 'ci-mobile', 'ci-opera'])
+gulp.task('ci', ['test', 'ci-modern', 'ci-ie-modern', 'ci-ie-legacy', 'ci-mobile', 'ci-opera']);
 
 gulp.task('serve', ['compile'], serve({
   root: __dirname,
