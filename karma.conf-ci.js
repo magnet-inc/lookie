@@ -22,39 +22,13 @@ module.exports = function(config) {
       browserName: 'chrome',
       platform: 'OS X 10.9',
     },
-    'SL_Chrome_Windows': {
-      base: 'SauceLabs',
-      browserName: 'chrome',
-      platform: 'Windows 8.1',
-    },
-    'SL_Chrome_Linux': {
-      base: 'SauceLabs',
-      browserName: 'chrome',
-      platform: 'Linux',
-    },
     // Firefox
     'SL_Firefox_Mac': {
       base: 'SauceLabs',
       browserName: 'firefox',
       platform: 'OS X 10.9',
     },
-    'SL_Firefox_Windows': {
-      base: 'SauceLabs',
-      browserName: 'firefox',
-      platform: 'Windows 8.1',
-    },
-    'SL_Firefox_Linux': {
-      base: 'SauceLabs',
-      browserName: 'firefox',
-      platform: 'Linux',
-    },
     // Safari
-    'SL_Safari_6': {
-      base: 'SauceLabs',
-      browserName: 'safari',
-      platform: 'OS X 10.8',
-      version: '6'
-    },
     'SL_Safari_7': {
       base: 'SauceLabs',
       browserName: 'safari',
@@ -99,24 +73,6 @@ module.exports = function(config) {
       version: '11'
     },
     // iOS
-    'SL_iOS_4': {
-      base: 'SauceLabs',
-      browserName: 'iphone',
-      platform: 'OS X 10.6',
-      version: '4.3'
-    },
-    'SL_iOS_5': {
-      base: 'SauceLabs',
-      browserName: 'iphone',
-      platform: 'OS X 10.8',
-      version: '5.1'
-    },
-    'SL_iOS_6': {
-      base: 'SauceLabs',
-      browserName: 'iphone',
-      platform: 'OS X 10.8',
-      version: '6.1'
-    },
     'SL_iOS_7': {
       base: 'SauceLabs',
       browserName: 'iphone',
@@ -129,30 +85,6 @@ module.exports = function(config) {
       browserName: 'android',
       platform: 'linux',
       version: '4.4'
-    },
-    'SL_Android_4_3': {
-      base: 'SauceLabs',
-      browserName: 'android',
-      platform: 'linux',
-      version: '4.3'
-    },
-    'SL_Android_4_2': {
-      base: 'SauceLabs',
-      browserName: 'android',
-      platform: 'linux',
-      version: '4.2'
-    },
-    'SL_Android_4_1': {
-      base: 'SauceLabs',
-      browserName: 'android',
-      platform: 'linux',
-      version: '4.1'
-    },
-    'SL_Android_4_0': {
-      base: 'SauceLabs',
-      browserName: 'android',
-      platform: 'linux',
-      version: '4.0'
     },
     // Opera
     'SL_Opera': {
