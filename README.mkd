@@ -69,3 +69,7 @@ lookie.on('del', function(key) {
   console.log(key);
 });
 ```
+
+## License
+
+MIT License
