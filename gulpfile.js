@@ -62,8 +62,7 @@ gulp.task('ci-ie-legacy', ['ci-ie-modern'], function() {
   return gulp.src('test/*.js').
     pipe(karma({
       configFile: 'karma.conf-ci.js',
-      browsers: ['SL_IE_6', 'SL_IE_7', 'SL_IE_8'],
-      transports: ['jsonp-polling'],
+      browsers: ['SL_IE_7', 'SL_IE_8'],
       action: 'run'
     })).
     on('error', function(err) {
