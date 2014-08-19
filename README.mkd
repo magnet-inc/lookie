@@ -20,7 +20,7 @@ First, setup your lookie storage.
 var lookie = new Lookie('namespace');
 ```
 
-### Get and Set keys and values.
+### Get and Set values for key.
 
 ```javascript
 lookie.set('foo', anyObject);
@@ -29,7 +29,7 @@ lookie.del('foo');
 lookie.get('foo'); // => null or undefined
 ```
 
-### Check exists the key.
+### Check existence of the key.
 
 ```javascript
 lookie.exists('foo'); // => false
@@ -37,7 +37,7 @@ lookie.set('foo', 1);
 lookie.exists('foo'); // => true
 ```
 
-### Get the keys in the namespace.
+### List the keys in a namespace.
 
 ```javascript
 lookie.keys(); // => []
@@ -45,7 +45,7 @@ lookie.set('foo', 1);
 lookie.keys(); // => ['foo']
 ```
 
-### Clear all keys and values in the namespace.
+### Clear all values in a namespace.
 
 ```javascript
 lookie.set('foo', 1);
@@ -54,7 +54,7 @@ looke.clear();
 lookie.keys(); // => []
 ```
 
-### Event handling.
+### Event handling
 
 ```javascript
 lookie.on('add', function(key, newValue) {
