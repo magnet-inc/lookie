@@ -1,7 +1,7 @@
 {
   "name": "lookie",
   "main": "lookie.js",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "homepage": "https://github.com/magnet-inc/lookie",
   "authors": [
     "Sho Kusano <rosylilly@aduca.org>"
