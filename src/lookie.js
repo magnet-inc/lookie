@@ -7,6 +7,8 @@ var Lookie = function(namespace) {
     this.storage = new Lookie.LocalStorage(this.namespace);
   } else if(Lookie.Cookie.enabled) {
     this.storage = new Lookie.Cookie(this.namespace);
+  } else {
+    this.storage = new Lookie.Cookie(this.namespace);
   };
 
   var self = this;
