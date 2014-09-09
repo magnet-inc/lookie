@@ -65,8 +65,6 @@ cookie.enabled = Cookie.enabled;
 
 module.exports = cookie;
 
-if(!cookie.enabled) { return; };
-
 cookie.prototype = new EventEmitter();
 
 cookie.prototype.getStorage = function() {
