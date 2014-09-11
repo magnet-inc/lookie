@@ -1,9 +1,9 @@
 var EventEmitter = require('wolfy87-eventemitter');
 
-var Lookie = function(namespace) {
+var Lookie = function(namespace, forceCookie) {
   this.namespace = namespace;
 
-  if(Lookie.LocalStorage.enabled) {
+  if(Lookie.LocalStorage.enabled && !forceCookie) {
     this.storage = new Lookie.LocalStorage(this.namespace);
   } else if(Lookie.Cookie.enabled) {
     this.storage = new Lookie.Cookie(this.namespace);
