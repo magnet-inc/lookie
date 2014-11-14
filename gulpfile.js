@@ -23,7 +23,7 @@ gulp.task('compile', ['build'], function() {
     pipe(gulp.dest('.'));
 });
 
-gulp.task('test', function() {
+gulp.task('test', ['compile'], function() {
   return gulp.src('test/*.js').
     pipe(karma({
       configFile: 'karma.conf.js',
