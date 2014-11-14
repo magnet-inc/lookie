@@ -22,7 +22,6 @@ inMemory.prototype.get = function(key) {
 };
 
 inMemory.prototype.del = function(key) {
-  var storage = this.getStorage();
   var keys = arguments, len = keys.length, i = 0, key, old, val;
   while(i < len) {
     key = keys[i];
@@ -35,10 +34,9 @@ inMemory.prototype.del = function(key) {
 
     i++;
   };
-}
+};
 
 inMemory.prototype.keys = function() {
-  var storage = this.getStorage();
   var keys = [], key;
 
   for(key in this.storage) {
