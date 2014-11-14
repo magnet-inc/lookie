@@ -8,7 +8,7 @@ var Lookie = function(namespace, forceCookie) {
   } else if(Lookie.Cookie.enabled) {
     this.storage = new Lookie.Cookie(this.namespace);
   } else {
-    this.storage = new Lookie.Cookie(this.namespace);
+    this.storage = new Lookie.InMemory(this.namespace);
   };
 
   var self = this;
@@ -27,6 +27,7 @@ var Lookie = function(namespace, forceCookie) {
 
 Lookie.LocalStorage = require('./localStorage');
 Lookie.Cookie = require('./cookie');
+Lookie.InMemory = require('./in_memory');
 
 Lookie.prototype = new EventEmitter();
 

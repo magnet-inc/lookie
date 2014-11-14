@@ -1,8 +1,8 @@
 # Lookie
 
-[![Build Status](https://travis-ci.org/magnet-inc/lookie.svg?branch=master)](https://travis-ci.org/magnet-inc/lookie) [![Sauce Test Status](https://saucelabs.com/buildstatus/magnet-inc)](https://saucelabs.com/u/magnet-inc)
+[![Build Status](https://travis-ci.org/magnet-inc/lookie.svg?branch=master)](https://travis-ci.org/magnet-inc/lookie) [![Sauce Test Status](https://saucelabs.com/buildstatus/lookie)](https://saucelabs.com/u/lookie)
 
-[![Sauce Test Status](https://saucelabs.com/browser-matrix/magnet-inc.svg)](https://saucelabs.com/u/magnet-inc)
+[![Sauce Test Status](https://saucelabs.com/browser-matrix/lookie.svg)](https://saucelabs.com/u/lookie)
 
 Local storage in anywhere.
 
