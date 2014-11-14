@@ -3,7 +3,8 @@ node_js:
 - '0.10'
 env:
   global:
-    secure: bZ/8Q722q+Uwc+fhdbH2x6xGY1enRtPKi3SF2KASdnKfg3CET3jze9gGhwccF0ZjTz9OAIx6Guy6adnV4buiWxwqKu8DpGrPpNldfoROpP/pkDlOfiSTljSAlPlm+DlHNML8gfqet99RXK9FQsy9J3MCaGpFh5g2PgrYcJbzCBg=
+    - secure: WPHqwDRJ93iPLdkqyye8/yl1v8wcJgPgcfMC4mSYW3h8SA9Ust2su721lqsRhbici2/L7jJCiVxfqe/H31S4Rw8KbKht/hUcJvvyjiEudCUigAvX/b19s9vej6aKD4UwVNYnZLIAOW1kSqPs7CCPkPp/jjZ/K1e0TzUAPQZOxKk=
+    - secure: cY43HWk7JPWWm+ienooodPJnXYCpI9ttm34f47PUrml5mRlQHvw5z6x9XnvZISeCVl0rClgmQkI9FmZ3oL0BDzWGEFiiDBbp4NWNtct1+CbAr+2vDIWdeM/EM6Xhqzc1dOzfOUbF1DgfV5e2B77olSXfiEpQLysC4Rau1cJxQds=
 branches:
   only:
     - master
