@@ -94,7 +94,11 @@ gulp.task('ci-opera', ['ci-mobile'], function() {
     });
 });
 
-gulp.task('ci', ['test', 'ci-modern', 'ci-ie-modern', 'ci-ie-legacy', 'ci-mobile', 'ci-opera']);
+if(process.env.TRAVIS_PULL_REQUEST == 'false') {
+  gulp.task('ci', ['test', 'ci-modern', 'ci-ie-modern', 'ci-ie-legacy', 'ci-mobile', 'ci-opera']);
+} else {
+  gulp.task('ci', ['test']);
+};
 
 gulp.task('serve', ['compile'], serve({
   root: __dirname,
